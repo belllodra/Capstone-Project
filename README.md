@@ -24,7 +24,3 @@ Primeramente hicimos pruebas con el modelo de regresión lineal, los resultados 
 Despues realizamos pruebas con una red neuronal simple, obteniendo peores resultados.
 El siguiente modelo sobre el que realizamos pruebas fue XGRADIENT BOSTING, obteniendo los mejores resultados. Para ajustar los hiperparametros realizamos una búsqueda con validación cruzada sobre algunos de los posibles hiperparametros 
 
-
-Dec
-
-
