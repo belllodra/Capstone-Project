@@ -20,7 +20,8 @@ Hemos obtenido los datos meteorológicos de la web https://meteostat.net/es/plac
 
 # MODELOS PROBADOS
 
-Primeramente hicimos pruebas con el modelo de regresión lineal, los resultados fueron bastante buenos. Obteniendo en kaggle una puntuación de 0.10267
+Primeramente hicimos pruebas con el modelo de regresión lineal, los resultados fueron bastante buenos. 
 Despues realizamos pruebas con una red neuronal simple, obteniendo peores resultados.
-El siguiente modelo sobre el que realizamos pruebas fue XGRADIENT BOSTING, obteniendo los mejores resultados. Para ajustar los hiperparametros realizamos una búsqueda con validación cruzada sobre algunos de los posibles hiperparametros 
+El siguiente modelo sobre el que realizamos pruebas fue XGRADIENT BOSTING, obteniendo los mejores resultados. Nos dectantamos por realizar bastanres pruebas con este.
+También probamos otros modelos como random forest o LGBMRegressor, dandonos peores resultados.
 
