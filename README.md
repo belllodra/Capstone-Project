@@ -20,7 +20,7 @@ Despues realizamos pruebas con una red neuronal simple, obteniendo peores result
 El siguiente modelo sobre el que realizamos pruebas fue XGRADIENT BOSTING, obteniendo los mejores resultados.
 También probamos otros modelos como random forest o LGBMRegressor, dandonos peores resultados.
 
-# VISUALIZACIÓN DE LOS DATOS
+# VISUALIZACIÓN DE LOS DATOS ARNAUU!!
 https://huggingface.co/spaces/adriansanz/bicis
 
 # AMPLIACIÓN 1: Fiestas de barrio
@@ -28,9 +28,9 @@ https://huggingface.co/spaces/adriansanz/bicis
 Para hacer un análisis de cómo la demanda de Bicing cambiaba dependiendo de si había fiestas en el barrio, primero hemos agrupado las estaciones de Bicing (station_id) según el barrio de Barcelona en el que se encuentran. Luego, hemos creado una variable dummy: 1 si había fiestas en el barrio ese día, mes y año, y 0 en caso contrario. Esta información sobre las fiestas se ha tenido que recopilar manualmente, ya que no existe una base de datos a nivel Barcelona. Finalmente, hemos analizado cómo cambiaba la demanda de bicicletas si había fiestas de barrio o no, utilizando una media general, pero también observando si, dentro de los meses en los que había fiestas, la demanda variaba considerablemente. Los resultados para 2023, el año con más normalidad en términos de movilidad y fiestas, sugieren que, en general, las fiestas de barrio no afectan a la demanda de bicicletas. Sin embargo, en algunos barrios sí se observó un cambio significativo, aunque para la mayoría no fue así. Por lo tanto, a pesar de haber analizado esta nueva variable, no se ha añadido a ningún modelo de predicción para los datos de 2024.
 
 # AMPLIACIÓN 2: Agente conversacional
-Hemos decidido crear un agente conversacional para recomendar estaciones de Bicing con disponibilidad adecuada, ya que permite una interacción natural, guía al usuario paso a paso y automatiza la consulta de predicción meteorológica y ocupación de estaciones, siendo útil para mejorar la experiencia de planificación de trayectos en bici.
+Hemos decidido crear un agente conversacional para recomendar estaciones de Bicing, ya que permite una interacción natural, guía al usuario paso a paso. Hemos decidido automatizar la consulta de predicción meteorológica y de obtención de que estaciónes estan cerca de la ubicación que se solicita, siendo útil para mejorar la experiencia de planificación de trayectos en bici.
 El agente conversacional guía al usuario preguntando ubicación, fecha, hora y porcentaje deseado de bicis disponibles. Luego:
--Busca las 5 estaciones más cercanas en Barcelona.
+-Busca las 5 estaciones más cercanas respecto a la ubicación que se ha solicitado, para ello usa Nominatim, que es un servicio de geocodificación que forma parte de OpenStreetMap, permite convertir una dirección textual en coordenadas geográficas (lat, lon)
 -Obtiene la predicción meteorológica (temperatura y precipitación) con la API de Open-Meteo.
 -Usa el modelo generado anteriormente para predecir disponibilidad de bicis.
 -Muestra al usuario las estaciones ordenadas por disponibilidad prevista.
