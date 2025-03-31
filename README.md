@@ -17,7 +17,7 @@ Hemos obtenido los datos meteorológicos de la API de Open-Meteo, donde se puede
 # MODELOS PROBADOS
 Primeramente hicimos pruebas con el modelo de regresión lineal, los resultados fueron bastante buenos. 
 Despues realizamos pruebas con una red neuronal simple, obteniendo peores resultados.
-El siguiente modelo sobre el que realizamos pruebas fue XGRADIENT BOSTING, obteniendo los mejores resultados.
+El siguiente modelo sobre el que realizamos pruebas fue  XGBRegressor, obteniendo los mejores resultados.
 También probamos otros modelos como random forest o LGBMRegressor, dandonos peores resultados.
 El modelo final ha sido el XGBRegressor(n_estimators=400, learning_rate=0.05, max_depth=12)
 
