@@ -38,3 +38,8 @@ El agente conversacional guía al usuario preguntando ubicación, fecha, hora y 
 Hemos utilizado el LLM llama-3.3-70b-versatile, que genera las preguntas y gestiona el flujo de conversación de forma contextual e inteligente.
 Para la interfaz grafica hemos usado gradio.
 Enlace: https://huggingface.co/spaces/adriansanz/bicing_agent
+
+
+
+https://github.com/user-attachments/assets/a6104a35-7c8c-43b9-b3ac-99548ba3cad9
+
