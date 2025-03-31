@@ -31,7 +31,7 @@ Para hacer un análisis de cómo la demanda de Bicing cambiaba dependiendo de si
 # AMPLIACIÓN 2: Agente conversacional
 Hemos decidido crear un agente conversacional para recomendar estaciones de Bicing, ya que permite una interacción natural, guía al usuario paso a paso. Hemos decidido automatizar la consulta de predicción meteorológica y de obtención de que estaciónes estan cerca de la ubicación que se solicita, siendo útil para mejorar la experiencia de planificación de trayectos en bici.
 El agente conversacional guía al usuario preguntando ubicación, fecha, hora y porcentaje deseado de bicis disponibles. Luego:
--Busca las 5 estaciones más cercanas respecto a la ubicación que se ha solicitado, para ello usa Nominatim, que es un servicio de geocodificación que forma parte de OpenStreetMap, permite convertir una dirección textual en coordenadas geográficas (lat, lon)
+-Busca las 10 estaciones más cercanas respecto a la ubicación que se ha solicitado, para ello usa Nominatim, que es un servicio de geocodificación que forma parte de OpenStreetMap, permite convertir una dirección textual en coordenadas geográficas (lat, lon)
 -Obtiene la predicción meteorológica (temperatura y precipitación) con la API de Open-Meteo.
 -Usa el modelo generado anteriormente para predecir disponibilidad de bicis.
 -Muestra al usuario las estaciones ordenadas por disponibilidad prevista.
