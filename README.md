@@ -21,8 +21,18 @@ El siguiente modelo sobre el que realizamos pruebas fue  XGBRegressor, obteniend
 También probamos otros modelos como random forest o LGBMRegressor, dandonos peores resultados.
 El modelo final ha sido el XGBRegressor(n_estimators=400, learning_rate=0.05, max_depth=12)
 
-# VISUALIZACIÓN DE LOS DATOS ARNAUU!!
-https://huggingface.co/spaces/adriansanz/bicis
+# VISUALIZACIÓN DE LOS DATOS
+La visualización de los datos se encuentra disponible en el siguiente enlace: https://huggingface.co/spaces/adriansanz/bicis. Para hacer la visualización se ha utilizado utilizado la librería Gradio. Los pasos a realizar son los siguientes:
+- Se importan librerías, se carga el modelo que mejor ha funcionado (XGBRegressor) y un dataset (Informacio_Estacions_Bicing_2025.csv) con información de las estaciones de Bicing en Barcelona.
+- Hemos definido una función llamada get_station_location que a partir del station_id devuelve los valores de latitud y longitud (para situarlo en el mapa) y la dirección proporcionada como argumento de entrada (para mostrar la dirección de las estaciones disponibles).
+- Hemos definido una función llamada filter_map que a partir de unos parámetros de entrada (coincidentes con los propios parámetros del modelo y la disponibilidad mínima) y predice la disponibilidad de bicis en todas las estaciones usando el modelo cargado.
+- El valor de entrada de la disponibilidad es utilizado para filtrar todos aquellos outputs con una disponibilidad mayor a la deseada por el usuario.
+- Se buscan las coordenadas de cada estación (llamando a la función get_station_location) y se eliminan aquellas sin datos de ubicación.
+- Se usa plotly para mostrar las estaciones disponibles en un mapa interactivo con Scattermapbox.
+- Se crea una UI con gr.Blocks que permite a los usuarios ajustar filtros y visualizar resultados.
+- Como filtros principales seleccionamos el día, mes, hora y disponibilidad mínima.
+- Como filtros avanzados encontramos la disponibilidad en las 4 horas previas, y 2 variables meteorológicas (temperatura y precipitación).
+- El botoón "Filtrar estacions" activa filter_map, actualizando el mapa con estaciones disponibles.
 
 # AMPLIACIÓN 1: Fiestas de barrio
 
